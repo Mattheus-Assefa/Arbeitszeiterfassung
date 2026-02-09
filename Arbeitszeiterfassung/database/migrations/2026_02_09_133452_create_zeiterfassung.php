@@ -14,6 +14,8 @@ return new class extends Migration
         Schema::create('zeiterfassung', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
+            $table->string('Name')->default('');
+            $table->string('Datum')->default('');
             $table->string('Kategorie')->default('');
             $table->string('Arbeitsbeginn')->default('');
             $table->string('Arbeitsende')->default('');

@@ -1,8 +1,9 @@
 <div class="p-6">
+
+
+
     <div class="overflow-x-auto rounded-lg shadow">
-
         <table class="min-w-full divide-y divide-gray-300">
-
             <thead class="bg-gray-100">
                 <tr>
                     @foreach ($columns as $column)
@@ -10,11 +11,6 @@
                             {{ ucfirst($column) }}
                         </th>
                     @endforeach
-
-                    <!-- Action column -->
-                    <th class="px-4 py-3 text-left text-sm font-semibold text-gray-700 uppercase tracking-wider">
-                        Create QR Code
-                    </th>
                 </tr>
             </thead>
 
@@ -23,7 +19,6 @@
                     <tr class="{{ $loop->even ? 'bg-gray-50' : 'bg-white' }} hover:bg-gray-100 transition">
 
                         @foreach ($columns as $column)
-
                             <td class="px-4 py-3 text-sm text-gray-900 whitespace-nowrap">
                                 {{ $row->$column }}
                             </td>
@@ -32,8 +27,6 @@
                     </tr>
                 @endforeach
             </tbody>
-
         </table>
-
     </div>
 </div>
