@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('zeiterfassung', function (Blueprint $table) {
+        Schema::create('zeiterfassungs', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
             $table->string('Name')->default('');
