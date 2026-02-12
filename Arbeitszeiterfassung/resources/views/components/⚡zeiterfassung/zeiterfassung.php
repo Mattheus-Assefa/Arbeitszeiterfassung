@@ -11,7 +11,7 @@ new class extends Component
     public $columns;
     public $rows;
     public $Names;
-    public string $current_Name = "John";
+    public $current_name = '';
 
     protected $listeners = [
         'refresh' => '$refresh'
@@ -19,7 +19,7 @@ new class extends Component
 
     public function boot()
     {
-        $this->columns = ['id', 'Name', 'Datum', 'Kategorie', 'Arbeitsbeginn', 'Arbeitsende', 'Mittagspause', 'Arbeitszeit', 'Soll_Arbeitszeit', 'Ueberstunden_Minusstunden'];
+        $this->columns = ['Name', 'Datum', 'Kategorie', 'Arbeitsbeginn', 'Arbeitsende', 'Mittagspause', 'Arbeitszeit', 'Soll_Arbeitszeit', 'Ueberstunden_Minusstunden'];
         $this->rows = DB::table('zeiterfassungs')
         ->select($this->columns)
         ->orderBy('Datum', 'asc')
@@ -35,12 +35,6 @@ new class extends Component
         ->orderBy('Name', 'asc')
         ->distinct()
         ->get();
-    }
-
-    public function change_current_name($name)
-    {
-        $this->current_Name = $name;
-        $this->dispatch('refresh');
     }
 
     public function testdata()
